@@ -20,12 +20,11 @@ def dis_asm(text: str) -> list:
     for i in text:
         code = ord(i) - KOR_BASE_CODE
         cho_sung_index = int(code / CHO_SUNG_BASE)
-        result += CHO_SUNG_LIST[cho_sung_index]
-
         jung_sung_index = int((code - (CHO_SUNG_BASE * cho_sung_index)) / JUNG_SUNG_BASE)
-        result += JUNG_SUNG_LIST[jung_sung_index]
-
         jong_sung_index = int((code - (CHO_SUNG_BASE * cho_sung_index) - (JUNG_SUNG_BASE * jung_sung_index)))
+
+        result += CHO_SUNG_LIST[cho_sung_index]
+        result += JUNG_SUNG_LIST[jung_sung_index]
         result += JONG_SUNG_LIST[jong_sung_index]
 
     return result
@@ -34,6 +33,7 @@ def dis_asm(text: str) -> list:
 def asm(kor_list: list) -> str:
     result = []
     unicode = 0
+
     for i, v in enumerate(kor_list):
         order = i % 3
         if order == 0:
