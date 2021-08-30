@@ -2,7 +2,7 @@
 Disassemble and assemble korean-letters code for multiple languages
 - Python3
 - Java
-- Kotlin -> WIP
-- C -> Waiting
-- C++ -> Waiting
+- Kotlin
+- C -> WIP
+- C++ -> WIP
 - JavaScript -> Waiting
